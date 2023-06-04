@@ -5,12 +5,13 @@ CFLAGS := -Wall -Wextra -Werror
 # Minilibx directory
 MLX_DIR := ./minilibx_linux
 
+COMMON := common/*.c
+
 # Source files
-SRCS := *.c
+SRCS := *.c $(COMMON)
 
 # Output binary
-TARGET := myprogram
-
+TARGET := miniRT
 all: $(TARGET)
 
 $(TARGET): $(SRCS)
