@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_error.c                                      :+:      :+:    :+:   */
+/*   valid_options.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: riramli <riramli@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "common.h"
+#include "validate_params.h"
 
-void print_error(char *s)
+/*If invalid options given by args after argv[1], error message and 
+exit(0) are called.
+This will be coded next time once I find out what the optional args are.*/
+void valid_options(int argc, char **argv, int debug)
 {
-    ft_printf("Error\n");
-    ft_printf("%s\n", s);
-    exit(0);
+	if (argc == 1 && argv[0] != 0 && debug > -1) return ;
 }

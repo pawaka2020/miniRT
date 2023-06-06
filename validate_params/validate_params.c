@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_error.c                                      :+:      :+:    :+:   */
+/*   validator.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: riramli <riramli@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,11 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "common.h"
+#include "validate_params.h"
 
-void print_error(char *s)
+void validate_params(int argc, char **argv)
 {
-    ft_printf("Error\n");
-    ft_printf("%s\n", s);
-    exit(0);
+    valid_argc(argc);
+    valid_ext(argv[1], 0);
+    valid_location(argv[1], 0);
+    valid_options(argc, argv, 0);
+    //placeholder logic to silence '-Werror=unused=parameter' compile errors
+	//if (argc == 1 && argv[0] != 0) exit(0);
 }

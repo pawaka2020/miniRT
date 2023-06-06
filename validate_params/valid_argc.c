@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_error.c                                      :+:      :+:    :+:   */
+/*   valid_argc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: riramli <riramli@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,11 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "common.h"
+#include "validate_params.h"
 
-void print_error(char *s)
+void	valid_argc(int argc)
 {
-    ft_printf("Error\n");
-    ft_printf("%s\n", s);
-    exit(0);
+	if (argc < 2)
+		print_error("No arguments detected");
 }

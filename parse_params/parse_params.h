@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_error.c                                      :+:      :+:    :+:   */
+/*   parse_params.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: riramli <riramli@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,11 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "common.h"
+#ifndef PARSE_PARAMS_H
+# define PARSE_PARAMS_H
 
-void print_error(char *s)
-{
-    ft_printf("Error\n");
-    ft_printf("%s\n", s);
-    exit(0);
-}
+# include "../main.h"
+
+//primary function
+void	parse_params(t_scene *scene, const char *filename, int debug);
+//sub-functions
+void	parse_ambience(t_scene *scene, const char *filename, int debug);
+void	parse_camera(t_scene *scene, const char *filename, int debug);
+
+#endif

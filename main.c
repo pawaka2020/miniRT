@@ -1,5 +1,5 @@
-#include "main.h"
 
+#include "main.h"
 //this function needs to exist, but it is useless for the moment
 int	handle_no_event(void)
 {
@@ -46,7 +46,7 @@ void stop_screen(t_data *data)
 }
 
 //makes sure the parameters are valid, if not error mesage and exit(0) are called.
-void validate(int argc, char **argv);
+//void validate(int argc, char **argv);
 
 //parses the .rt file represented by argv[1] and includes options by other argv variables
 t_scene parse(int argc, char **argv);
@@ -61,14 +61,22 @@ void generate_controls(t_data *data, t_scene *scene);
 int	main(int argc, char **argv)
 {
 	//t_scene scene;
-	t_data	data;
-	print_error("hah");
-	//validate(argc, argv);
+	//t_data	data;
+
+	validate_params(argc, argv);
+	//parse_params()
 	//scene = parse(argc, argv);
-	start_screen(&data);
+	//start_screen(&data);
 	//generate_image(&data, &scene);
 	//generate_controls(&data, &scene);
-	stop_screen(&data);
+	//stop_screen(&data);
 	//placeholder logic to silence '-Werror=unused=parameter' compile errors
 	if (argc == 1 && argv[0] != 0) exit(0);
 }
+//for unit tests only
+// int	main(int argc, char **argv)
+// {
+// 	validate_params(argc, argv);
+// 	//valid_ext(argv[1], 1);
+// 	if (argc > -1) return 0;
+// }

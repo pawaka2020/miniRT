@@ -1,14 +1,17 @@
 # Compiler and flags
 CC := gcc
 CFLAGS := -Wall -Wextra -Werror
+MEMCHECK := -fsanitize=address
 
 # Minilibx directory
 MLX_DIR := ./minilibx_linux
 
 COMMON := common/*.c
 
+VALID := validate_params/*.c
+
 # Source files
-SRCS := *.c $(COMMON)
+SRCS := *.c $(COMMON) $(VALID)
 
 # Output binary
 TARGET := miniRT
@@ -16,7 +19,7 @@ all: $(TARGET)
 
 $(TARGET): $(SRCS)
 	make -C libft
-	$(CC) $(CFLAGS) -o $(TARGET) $(SRCS) libft/libft.a -L$(MLX_DIR) -lmlx -lX11 -lXext -lm
+	$(CC) $(CFLAGS) -o $(TARGET) $(SRCS) $(MEMCHECK) libft/libft.a -L$(MLX_DIR) -lmlx -lX11 -lXext -lm
 
 clean:
 	rm -f $(TARGET)
